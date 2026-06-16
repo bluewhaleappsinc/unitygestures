@@ -1,0 +1,13 @@
+# Add this file to any repository as .github/workflows/security-scan.yml
+name: Security Scan
+
+on:
+  push:
+    branches: [main, master, staging]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  security:
+    uses: bluewhaleappsinc/.github/.github/workflows/organization-security-scan.yml@main
+    secrets: inherit
